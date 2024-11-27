@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddofg0indk27w"]
+
+[ext_resource type="Script" path="res://happy.gd" id="1_5dyso"]
+[ext_resource type="Texture2D" uid="uid://fecrit3tr3ta" path="res://heart-empty.png" id="1_7i6p8"]
+
+[node name="happy" type="Node2D"]
+script = ExtResource("1_5dyso")
+
+[node name="Heart-empty" type="Sprite2D" parent="."]
+position = Vector2(296, 199)
+texture = ExtResource("1_7i6p8")
+
+[node name="Heart-empty2" type="Sprite2D" parent="."]
+position = Vector2(296, 188)
+texture = ExtResource("1_7i6p8")
+
+[node name="Heart-empty3" type="Sprite2D" parent="."]
+position = Vector2(296, 177)
+texture = ExtResource("1_7i6p8")
+
+[node name="Heart-empty4" type="Sprite2D" parent="."]
+position = Vector2(296, 166)
+texture = ExtResource("1_7i6p8")
+
+[node name="Heart-empty5" type="Sprite2D" parent="."]
+position = Vector2(296, 155)
+texture = ExtResource("1_7i6p8")
+
+[node name="Heart-empty6" type="Sprite2D" parent="."]
+position = Vector2(296, 144)
+texture = ExtResource("1_7i6p8")

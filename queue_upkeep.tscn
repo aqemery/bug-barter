@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfe555aqq83ax"]
+
+[ext_resource type="Theme" uid="uid://clbbpdwox3phf" path="res://theme.tres" id="1_a3q0b"]
+
+[node name="Upkeep" type="Label"]
+theme = ExtResource("1_a3q0b")
+theme_override_colors/font_color = Color(1, 0.00392157, 0.301961, 1)
+theme_override_font_sizes/font_size = 9
+text = "------Upkeep------"
+horizontal_alignment = 1

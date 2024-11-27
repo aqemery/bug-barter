@@ -1,0 +1,281 @@
+[gd_scene load_steps=7 format=3 uid="uid://cv84ffncycups"]
+
+[ext_resource type="Texture2D" uid="uid://3hpi5bv00g4u" path="res://tutorial.png" id="1_3l21b"]
+[ext_resource type="Script" path="res://tutorial.gd" id="1_wuldx"]
+[ext_resource type="Theme" uid="uid://clbbpdwox3phf" path="res://theme.tres" id="2_qskra"]
+
+[sub_resource type="Animation" id="Animation_olhw3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("current_resources:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("current trade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("timer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("trade queue:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("upkeep_values:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("alien:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wrp73"]
+resource_name = "new_animation"
+length = 60.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("current_resources:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("current trade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("timer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 20, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("trade queue:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 30, 40),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("upkeep_values:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 40, 50),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("alien:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ow748"]
+_data = {
+"RESET": SubResource("Animation_olhw3"),
+"new_animation": SubResource("Animation_wrp73")
+}
+
+[node name="tutorial" type="Node2D"]
+script = ExtResource("1_wuldx")
+
+[node name="Tutorial" type="Sprite2D" parent="."]
+modulate = Color(0.24, 0.24, 0.24, 1)
+texture = ExtResource("1_3l21b")
+centered = false
+
+[node name="current_resources" type="Sprite2D" parent="."]
+texture = ExtResource("1_3l21b")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 80, 160)
+
+[node name="Label" type="Label" parent="current_resources"]
+offset_left = 89.0
+offset_top = 62.0
+offset_right = 323.0
+offset_bottom = 89.0
+theme = ExtResource("2_qskra")
+theme_override_font_sizes/font_size = 9
+text = "These are your station's resources.
+Make trades to increase them."
+
+[node name="current trade" type="Sprite2D" parent="."]
+position = Vector2(0, 170)
+texture = ExtResource("1_3l21b")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 170, 264, 40)
+
+[node name="Label" type="Label" parent="current trade"]
+offset_left = 26.0
+offset_top = -32.0
+offset_right = 268.0
+offset_bottom = -5.0
+theme = ExtResource("2_qskra")
+theme_override_font_sizes/font_size = 9
+text = "This is the current trade.
+You can press space, click, or tap to accept it."
+
+[node name="timer" type="Sprite2D" parent="."]
+position = Vector2(0, 210)
+texture = ExtResource("1_3l21b")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 210, 384, 10)
+
+[node name="Label" type="Label" parent="timer"]
+offset_left = 26.0
+offset_top = -43.0
+offset_right = 286.0
+offset_bottom = -16.0
+theme = ExtResource("2_qskra")
+theme_override_font_sizes/font_size = 9
+text = "The trade will be rejected if the time expires."
+
+[node name="trade queue" type="Sprite2D" parent="."]
+position = Vector2(290, 0)
+texture = ExtResource("1_3l21b")
+centered = false
+region_enabled = true
+region_rect = Rect2(290, 0, 100, 134)
+
+[node name="Label" type="Label" parent="trade queue"]
+offset_left = -124.0
+offset_top = 37.0
+offset_right = 110.0
+offset_bottom = 94.0
+theme = ExtResource("2_qskra")
+theme_override_font_sizes/font_size = 9
+text = "Here you can see a list
+of the upcoming trades
+and when the next
+upkeep will happen."
+
+[node name="upkeep_values" type="Sprite2D" parent="."]
+position = Vector2(76, 0)
+texture = ExtResource("1_3l21b")
+centered = false
+region_enabled = true
+region_rect = Rect2(76, 0, 24, 160)
+
+[node name="Label" type="Label" parent="upkeep_values"]
+offset_left = 29.0
+offset_top = 42.0
+offset_right = 263.0
+offset_bottom = 69.0
+theme = ExtResource("2_qskra")
+theme_override_font_sizes/font_size = 9
+text = "On each upkeep a set amount
+of resources will be used."
+
+[node name="alien" type="Sprite2D" parent="."]
+position = Vector2(290, 133)
+texture = ExtResource("1_3l21b")
+centered = false
+region_enabled = true
+region_rect = Rect2(290, 133, 89, 76)
+
+[node name="Label" type="Label" parent="alien"]
+offset_left = -180.0
+offset_top = -52.0
+offset_right = 54.0
+offset_bottom = 5.0
+theme = ExtResource("2_qskra")
+theme_override_font_sizes/font_size = 9
+text = "Build relationships with each of the 5 space bugs by accepting trades. The more hearts you have the faster the timer will go. Good luck!"
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ow748")
+}
+autoplay = "new_animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

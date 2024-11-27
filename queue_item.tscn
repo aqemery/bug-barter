@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://2qfee7gxmxfb"]
+
+[ext_resource type="Script" path="res://queue_item.gd" id="1_bspt4"]
+[ext_resource type="Texture2D" uid="uid://cefseorqgykx8" path="res://food.png" id="1_olu5a"]
+[ext_resource type="Theme" uid="uid://clbbpdwox3phf" path="res://theme.tres" id="2_qcqx4"]
+
+[node name="queue_item" type="HFlowContainer"]
+layout_direction = 1
+alignment = 1
+script = ExtResource("1_bspt4")
+
+[node name="amount_out" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_qcqx4")
+theme_override_font_sizes/font_size = 9
+text = "100"
+
+[node name="out_pos" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_qcqx4")
+theme_override_font_sizes/font_size = 9
+text = "for"
+
+[node name="amount_in" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_qcqx4")
+theme_override_font_sizes/font_size = 9
+text = "100
+"
+
+[node name="in_pos" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="out_image" type="Sprite2D" parent="."]
+position = Vector2(15, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_olu5a")
+centered = false
+
+[node name="in_image" type="Sprite2D" parent="."]
+position = Vector2(61, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_olu5a")
+centered = false
